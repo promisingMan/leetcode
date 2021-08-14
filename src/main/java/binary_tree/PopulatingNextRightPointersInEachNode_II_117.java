@@ -4,7 +4,7 @@ package binary_tree;
  * @author zengjia
  * @date 2021-06-08 22:29:40
  */
-public class Populating_Next_Right_Pointers_in_Each_Node_II_117 {
+public class PopulatingNextRightPointersInEachNode_II_117 {
     public Node connect(Node root) {
         dfs(root, null);
         return root;

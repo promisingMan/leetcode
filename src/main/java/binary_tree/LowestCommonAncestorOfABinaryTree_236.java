@@ -9,7 +9,7 @@ import java.util.Set;
  * @author zengjia
  * @date 2021-06-10 15:13:24
  */
-public class Lowest_Common_AncestorOfA_Binary_Tree_236 {
+public class LowestCommonAncestorOfABinaryTree_236 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {
             return root;

@@ -7,7 +7,7 @@ import java.util.HashMap;
  * @author zengjia
  * @date 2021-05-30 22:26:15
  */
-public class Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal_106 {
+public class ConstructBinaryTreeFromInorderAndPostorderTraversal_106 {
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         int iLen = inorder.length;
         int pLen = postorder.length;
@@ -27,6 +27,7 @@ public class Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal_106 {
 
     HashMap<Integer, Integer> inorderMemoMap = new HashMap<>();
     int[] post;
+
     public TreeNode buildTree2(int[] inorder, int[] postorder) {
         for (int i = 0; i < inorder.length; i++) {
             inorderMemoMap.put(inorder[i], i);

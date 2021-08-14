@@ -4,7 +4,7 @@ package binary_search;
  * @author zengjia
  * @date 2021-04-01 08:47:23
  */
-public class Sqrt_X_69 {
+public class SqrtX_69 {
     public int mySqrt(int x) {
         long low = 0;
         long high = x;
