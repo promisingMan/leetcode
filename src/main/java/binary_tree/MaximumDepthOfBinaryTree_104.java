@@ -56,7 +56,7 @@ public class MaximumDepthOfBinaryTree_104 {
         return maxDepth;
     }
 
-    public void dfs(TreeNode root, int level) {
+    private void dfs(TreeNode root, int level) {
         if (root == null) {
             return;
         }
