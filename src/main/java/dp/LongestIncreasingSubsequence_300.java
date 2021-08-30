@@ -1,29 +1,28 @@
 package dp;
 
-import java.util.Arrays;
-
 /**
  * @author zengjia
  * @date 2021-03-14 18:41:27
  */
 public class LongestIncreasingSubsequence_300 {
     public int lengthOfLIS(int[] nums) {
-        if (nums.length < 2) {
-            return nums.length;
+        int len = nums.length;
+        if (len < 2) {
+            return len;
         }
 
-        int[] dp = new int[nums.length];
-        Arrays.fill(dp, 1);
-
+        int[] dp = new int[len];
+        dp[0] = 1;
         int res = 1;
 
-        for (int i = 1; i < nums.length; i++) {
+        for (int i = 1; i < len; i++) {
+            dp[i] = 1;
             for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {
+                if (nums[i] > nums[j]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
-                    res = Math.max(res, dp[i]);
                 }
             }
+            res = Math.max(res, dp[i]);
         }
 
         return res;
@@ -51,8 +50,8 @@ public class LongestIncreasingSubsequence_300 {
                 int left = 0;
                 int right = end;
                 while (left < right) {
-                    int mid = (left + right) / 2;
-                    if (tail[mid] < nums[i]) {
+                    int mid = left + (right - left) / 2;
+                    if (nums[i] > tail[mid]) {
                         // 中位数肯定不是要找的数，把它写在分支的前面
                         left = mid + 1;
                     } else {
