@@ -37,7 +37,6 @@ public class LinkedListCycle_141 {
         if (head == null || head.next == null) {
             return false;
         }
-        // 从虚拟节点出发
         ListNode slow = head;
         ListNode fast = head.next;
         while (slow != fast) {
