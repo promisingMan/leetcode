@@ -13,7 +13,7 @@ public class CompareVersionNumbers_165 {
         StringBuilder v2 = new StringBuilder("0");
         int len1 = chars1.length;
         int len2 = chars2.length;
-        while (i < len1 || j < len2) {
+        while (i <= len1 || j <= len2) {
             if (count1 == count2 && count1 != 0) {
                 int compare = Integer.compare(Integer.parseInt(v1.toString()), Integer.parseInt(v2.toString()));
                 count1 = 0;
