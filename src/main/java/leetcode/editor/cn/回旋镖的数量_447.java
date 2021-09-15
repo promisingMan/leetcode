@@ -47,26 +47,26 @@ import java.util.Map;
 
 public class 回旋镖的数量_447 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution solution = new 回旋镖的数量_447().new Solution();
     }
-}
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int numberOfBoomerangs(int[][] points) {
-        int ans = 0;
-        for (int[] p : points) {
-            Map<Integer, Integer> map = new HashMap<>();
-            for (int[] q : points) {
-                Integer distance = (p[0] - q[0]) * (p[0] - q[0]) + (p[1] - q[1]) * (p[1] - q[1]);
-                map.put(distance, map.getOrDefault(distance, 0) + 1);
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int numberOfBoomerangs(int[][] points) {
+            int ans = 0;
+            for (int[] p : points) {
+                Map<Integer, Integer> map = new HashMap<>();
+                for (int[] q : points) {
+                    Integer distance = (p[0] - q[0]) * (p[0] - q[0]) + (p[1] - q[1]) * (p[1] - q[1]);
+                    map.put(distance, map.getOrDefault(distance, 0) + 1);
+                }
+                for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                    int count = entry.getValue();
+                    ans += count * (count - 1);
+                }
             }
-            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-                int count = entry.getValue();
-                ans += count * (count - 1);
-            }
+            return ans;
         }
-        return ans;
     }
+    //leetcode submit region end(Prohibit modification and deletion)
 }
-//leetcode submit region end(Prohibit modification and deletion)
