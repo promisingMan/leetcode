@@ -28,8 +28,8 @@ public class CoinChange_322 {
             res = Math.min(res, count);
         }
 
-        for (int i = 0; i < coins.length; i++) {
-            dfs(coins, amount - coins[i], count + 1);
+        for (int coin : coins) {
+            dfs(coins, amount - coin, count + 1);
         }
     }
 
@@ -59,8 +59,8 @@ public class CoinChange_322 {
         }
 
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i < coins.length; i++) {
-            int res = memoSearch(coins, amount - coins[i], memo);
+        for (int coin : coins) {
+            int res = memoSearch(coins, amount - coin, memo);
             if (0 <= res && res < min) {
                 min = res + 1;
             }
@@ -82,9 +82,9 @@ public class CoinChange_322 {
         dp[0] = 0;
         for (int i = 1; i <= amount; i++) {
             dp[i] = amount + 1;
-            for (int j = 0; j < coins.length; j++) {
-                if (i >= coins[j]) {
-                    dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
+            for (int coin : coins) {
+                if (i >= coin) {
+                    dp[i] = Math.min(dp[i], dp[i - coin] + 1);
                 }
             }
         }

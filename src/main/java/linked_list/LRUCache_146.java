@@ -39,11 +39,11 @@ public class LRUCache_146 {
             DoublyLinkedListNode newNode = new DoublyLinkedListNode(key, value);
             map.put(key, newNode);
             addToHead(newNode);
-            size++;
-            if (size > capacity) {
+            if (size == capacity) {
                 DoublyLinkedListNode tail = removeTail();
                 map.remove(tail.key);
-                size--;
+            } else {
+                size++;
             }
         } else {
             node.value = value;
